@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: tn10rcf8e-go-gitops
+  description: This is GitOps manifest for tn10rcf8e-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: tn10rcf8e-go
+    backstage.io/kubernetes-id: tn10rcf8e-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: tn10rcf8e-go   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:tn10rcf8e-go
